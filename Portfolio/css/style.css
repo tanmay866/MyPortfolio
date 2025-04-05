@@ -1,0 +1,342 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0A192F;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #112240;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64FFDA;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Page Transitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Page Exit Animation */
+.page-exit {
+    animation: fadeOut 0.5s ease-in forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Custom Animations */
+.hover-translate {
+    transition: transform 0.3s ease;
+}
+
+.hover-translate:hover {
+    transform: translateY(-5px);
+}
+
+/* Form Focus Styles */
+input:focus, textarea:focus {
+    box-shadow: 0 0 0 2px #64FFDA33;
+}
+
+/* Project Card Hover Effect */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(100, 255, 218, 0.1);
+}
+
+/* Mobile Menu Animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.mobile-menu-active {
+    animation: slideDown 0.3s ease forwards;
+}
+
+/* Active Navigation Link */
+.active-nav-link {
+    color: #64FFDA;
+    position: relative;
+}
+
+.active-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #64FFDA;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.active-nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Resume Button Animations */
+.resume-btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 9999px;
+}
+
+.resume-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(100, 255, 218, 0.2);
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    z-index: -1;
+    border-radius: 9999px;
+}
+
+.resume-btn:hover::before {
+    left: 0;
+}
+
+.resume-btn:active {
+    transform: scale(0.95);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(100, 255, 218, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
+    }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+/* Ripple Effect */
+.ripple {
+    position: absolute;
+    background: rgba(100, 255, 218, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Typing Animation */
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: #64FFDA;
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Button Styles */
+.rounded-full {
+    border-radius: 9999px;
+}
+
+/* Ripple Effect for Curved Buttons */
+.ripple {
+    border-radius: 50%;
+}
+
+/* Profile Picture Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.profile-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    h1 {
+        font-size: 2.25rem !important;
+    }
+    
+    h2 {
+        font-size: 1.75rem !important;
+    }
+    
+    .profile-float {
+        animation: float 4s ease-in-out infinite;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    #particles-js-home, #particles-js-about, #particles-js-projects, #particles-js-resume, #particles-js-contact {
+        opacity: 0.2 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .profile-float {
+        max-width: 200px;
+    }
+    
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
+    .resume-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .project-card {
+        padding: 16px !important;
+    }
+    
+    input, textarea, button {
+        font-size: 14px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .hover-translate:hover {
+        transform: none;
+    }
+    
+    .project-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .resume-btn:hover::before {
+        left: -100%;
+    }
+    
+    .resume-btn:active::before {
+        left: 0;
+    }
+}
+
+/* Device Orientation */
+@media (orientation: landscape) and (max-height: 500px) {
+    #home {
+        min-height: 450px;
+    }
+    
+    .py-20 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .container {
+        max-width: 100% !important;
+    }
+}
+
+/* Safe Area Insets for Notched Devices */
+@supports (padding: max(0px)) {
+    .container {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+    
+    nav {
+        padding-top: max(16px, env(safe-area-inset-top));
+    }
+    
+    footer {
+        padding-bottom: max(16px, env(safe-area-inset-bottom));
+    }
+}
+
+/* High Resolution Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Smooth Touch Scrolling */
+body {
+    -webkit-overflow-scrolling: touch;
+} 
