@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tanmaypatel.netlify.app/sitemap.xml 
