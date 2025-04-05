@@ -311,7 +311,8 @@
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Contact Form -->
                 <div class="bg-navy-light p-8 rounded-lg" data-aos="fade-right">
-                    <form id="contactForm" class="space-y-6">
+                    <form id="contactForm" name="contact" method="POST" data-netlify="true" class="space-y-6">
+                        <input type="hidden" name="form-name" value="contact">
                         <div>
                             <label for="name" class="block mb-2">Name</label>
                             <input type="text" id="name" name="name" required autocomplete="name"
