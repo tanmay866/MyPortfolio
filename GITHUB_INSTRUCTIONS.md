@@ -25,17 +25,23 @@ You'll be prompted to enter your GitHub username and password. If you have two-f
 5. Click "Generate token"
 6. Copy the token and use it as your password when pushing
 
-## Connecting Netlify to GitHub
+## Hosting with GitHub Pages (Optional)
 
-1. Log in to Netlify
-2. Go to your team page
-3. Click "New site from Git"
-4. Choose GitHub as your Git provider
-5. Authorize Netlify to access your GitHub account
-6. Select your portfolio repository
-7. Configure the build settings:
-   - Build command: leave empty
-   - Publish directory: `.` or `./`
-8. Click "Deploy site"
+You can host your portfolio directly from your GitHub repository using GitHub Pages:
 
-This will connect your Netlify site to your GitHub repository. Now whenever you push changes to GitHub, Netlify will automatically rebuild and deploy your site! 
+1. Go to your repository on GitHub
+2. Click on "Settings"
+3. Scroll down to the "GitHub Pages" section
+4. Under "Source", select "master" branch (or "main" if that's what you're using)
+5. Click "Save"
+
+Your site will be published at `https://YOUR_USERNAME.github.io/portfolio/` (replace YOUR_USERNAME with your GitHub username).
+
+## Making Updates
+
+Whenever you want to update your portfolio:
+
+1. Make your changes locally
+2. Commit them: `git add . && git commit -m "Description of changes"`
+3. Push to GitHub: `git push origin master` (or `main`)
+4. If using GitHub Pages, your site will automatically update within a few minutes

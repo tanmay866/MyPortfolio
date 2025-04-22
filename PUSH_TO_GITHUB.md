@@ -1,50 +1,58 @@
 # Pushing Your Portfolio to GitHub
 
-## Step 1: Push your code to GitHub
+## Step 1: Initialize Git Repository (if not already done)
 
-Run this command in your terminal:
+If you haven't already initialized your repository:
 
 ```
-git push -u origin master
+git init
+git add .
+git commit -m "Initial commit"
+```
+
+## Step 2: Create a GitHub Repository
+
+1. Go to [GitHub](https://github.com/) and sign in
+2. Click the '+' icon in the top right and select 'New repository'
+3. Name your repository (e.g., "MyPortfolio")
+4. Choose public or private visibility
+5. Click "Create repository"
+
+## Step 3: Connect Local Repository to GitHub
+
+Follow the instructions on GitHub to connect your local repository:
+
+```
+git remote add origin https://github.com/yourusername/your-repo-name.git
+git branch -M main
+git push -u origin main
 ```
 
 You'll be prompted to enter your GitHub credentials.
 
-## Step 2: Connect Netlify to GitHub
-
-1. Log in to [Netlify](https://app.netlify.com/)
-2. Go to your site dashboard
-3. Click on "Site settings"
-4. Go to "Build & deploy" → "Continuous Deployment"
-5. Under "Build settings", click "Link site to Git"
-6. Choose GitHub as your Git provider
-7. Authorize Netlify to access your GitHub account
-8. Select your portfolio repository
-9. Configure the build settings:
-   - Build command: leave empty
-   - Publish directory: `.` or `./`
-10. Click "Deploy site"
-
-## Step 3: Configure Auto-Publishing
-
-Once connected, your Netlify site will automatically rebuild and deploy whenever you push changes to GitHub!
+## Step 4: Making Future Updates
 
 1. Make changes to your portfolio locally
-2. Commit the changes: `git add . && git commit -m "Updated portfolio"`
-3. Push to GitHub: `git push origin master`
-4. Netlify will automatically detect the changes and rebuild your site
+2. Stage your changes: `git add .`
+3. Commit your changes: `git commit -m "Description of changes"`
+4. Push to GitHub: `git push origin main`
 
-## Checking Deployment Status
+## Step 5: Using GitHub Pages (Optional)
 
-1. Go to your Netlify dashboard
-2. Click on your site
-3. Go to the "Deploys" tab to see the status of your deployments
+To host your portfolio using GitHub Pages:
+
+1. Go to your repository on GitHub
+2. Click on "Settings"
+3. Scroll down to the "GitHub Pages" section
+4. Under "Source", select "main" branch
+5. Click "Save"
+6. Your site will be published at `https://yourusername.github.io/your-repo-name/`
 
 ## Troubleshooting
 
 If you encounter any issues:
 
-1. Check Netlify's deploy logs for errors
-2. Make sure your repository contains all necessary files (index.html, css, js, etc.)
-3. Confirm that the publish directory is set correctly
-4. Verify that the .gitignore file isn't excluding important files 
+1. Make sure your repository contains all necessary files (index.html, css, js, etc.)
+2. Verify that the .gitignore file isn't excluding important files
+3. Check that file paths are correct (relative paths work best for GitHub Pages)
+4. Ensure all assets (images, scripts, etc.) are properly included in your repository
